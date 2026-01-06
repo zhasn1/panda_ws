@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+  <!-- ROS 2 Control -->
+  <!-- this plugin is only compatible with only ROS 2 Jazzy -->
+  <!-- Please make sure you're using ROS 2 Jazzy and have installed the ros_gz and ros2_control packages -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find panda_controller)/config/panda_controllers.yaml</parameters>
+    </plugin>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+  </gazebo>
+
+</robot>
